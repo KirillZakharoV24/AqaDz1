@@ -1,55 +1,55 @@
-import org.junit.jupiter.api.Assertions;
-import org.junit.jupiter.api.Test;
-import ru.topacademy.CashBackService;
 
+import org.junit.Test;
+import ru.topacademy.CashBackService;
+import org.junit.Assert;
 public class CashBackServiceTest {
-    @Test
-    void testServiceInBoundary() {
+    @org.junit.Test
+    public void testServiceInBoundary() {
         CashBackService service = new CashBackService();
 
         int expected = 0;
         int actual = service.remain(1000);
 
-        Assertions.assertEquals(expected,actual);
+        Assert.assertEquals(expected,actual);
     }
 
-    @Test
-    void testServiceUnderBoundary() {
+    @org.junit.Test
+    public void testServiceUnderBoundary() {
         CashBackService service = new CashBackService();
 
         int expected = 10;
         int actual = service.remain(990);
 
-        Assertions.assertEquals(expected,actual);
+        Assert.assertEquals(expected,actual);
     }
 
-    @Test
-    void testServiceBelowBoundary() {
+    @org.junit.Test
+    public void testServiceBelowBoundary() {
         CashBackService service = new CashBackService();
 
         int expected = 990;
         int actual = service.remain(1010);
 
-        Assertions.assertEquals(expected,actual);
+        Assert.assertEquals(expected,actual);
     }
 
-    @Test
-    void testServiceBorderBoundary() {
+    @org.junit.Test
+    public void testServiceBorderBoundary() {
         CashBackService service = new CashBackService();
 
         int expected = 1;
         int actual = service.remain(999);
 
-        Assertions.assertEquals(expected,actual);
+        Assert.assertEquals(expected,actual);
     }
 
-    @Test
-    void testServiceBorderBoundary1() {
+    @org.junit.Test
+    public void testServiceBorderBoundary1() {
         CashBackService service = new CashBackService();
 
         int expected = 999;
         int actual = service.remain(1001);
 
-        Assertions.assertEquals(expected,actual);
+        Assert.assertEquals(expected,actual);
     }
 }
